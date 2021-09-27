@@ -11,5 +11,8 @@ app.use('/', routes)
 
 
 app.listen(PORT, function(){
+    for (const key in process.env) {
+        console.log("variavel: ", key, "valor: ", process.env[key])
+    }
     console.log("iniciado...")
 })
