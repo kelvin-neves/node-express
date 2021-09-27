@@ -11,6 +11,10 @@ app.use('/', routes)
 
 
 app.listen(PORT, function(){
+    console.log("variaveis configuradas")
+    const {DBHOST, DBPORT, DBNAME, DBUSER, DBPASS} = process.env
+    console.log(DBHOST, DBPORT, DBNAME, DBUSER, DBPASS)
+
     for (const key in process.env) {
         console.log("variavel: ", key, "valor: ", process.env[key])
     }
