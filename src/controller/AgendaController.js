@@ -15,15 +15,15 @@ module.exports = {
     async create(request, response){
         console.log("create: ", request.body)
         const { nome, telefone } = request.body
-        try {
+        // try {
             const [id] = await dao.create(nome, telefone)
             return response.status(201).json({ id })
-        } catch (error) {
-            console.log(error)
-            return response.status(500).json({
-                error: "Erro interno do sistema"
-            })
-        }
+        // } catch (error) {
+        //     console.log(error)
+        //     return response.status(500).json({
+        //         error: "Erro interno do sistema"
+        //     })
+        // }
     },
     async update(request, response){
         const { id } = request.params
